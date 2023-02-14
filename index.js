@@ -28,8 +28,10 @@ console.log(item)
 const userInput = (letter) => {
  let ifRight = false
  for(let i = 0; i < selectWord.length; i++) {
-    ifRight= true
-    guessWord[i] = letter
+    if(selectWord[i] === letter) {
+        ifRight= true
+        guessWord[i] = letter 
+    }
  }
  return ifRight
 };
@@ -38,13 +40,15 @@ const checkForWIn = () => {
     return guessWord.join('') === selectWord
 }
 
+let turn = function () {
+    console.log()
+}
+
 const execute = () => {
     console.log('Lets Play!')
     selectWord()
     console.log('The word is: ' + guessWord.join(''))
 }
 
-let turn =function () {
-    console.log( )
-}
+
 
